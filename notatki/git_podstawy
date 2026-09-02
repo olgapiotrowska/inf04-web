@@ -10,3 +10,7 @@
     - git switch -c nazwaNowejBranchy - tworzenie i automatyczne przskoczenie do nowej branchy
     - git switch nazwaBranchy - przelczanie na dana branche
     - git marge brancha - zaciagnecie zmian do branchy na ktorej jestesmy 
+5. Github
+    - git remote add orgin "link do repozytorium"
+    - git clone <adres> - clonowanie repozytorium
+    

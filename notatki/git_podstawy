@@ -14,3 +14,4 @@
     - git remote add orgin "link do repozytorium"
     - git clone <adres> - clonowanie repozytorium
     - git push -u orgin main - dodanie galezi na serwer
+    - git pull - sciagniecie zmian z serwera

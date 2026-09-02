@@ -5,3 +5,8 @@
     - git add nazwaPliku - dodanie kkonkretnego pliku do poczekalni
     - git add . - dodanie wszyskich plikow do poczekalni
     - git commit -m "wiadomosc" - komit z wiadomoscja
+4. branche
+    - git branch - lista branchy
+    - git switch -c nazwaNowejBranchy - tworzenie i automatyczne przskoczenie do nowej branchy
+    - git switch nazwaBranchy - przelczanie na dana branche
+    - git marge brancha - zaciagnecie zmian do branchy na ktorej jestesmy 

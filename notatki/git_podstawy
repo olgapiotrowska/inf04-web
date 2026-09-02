@@ -1,2 +1,7 @@
 1. git init - inicjalizacja projektu
 2. git config --local user.name "" // user.email "" - dodanie donych o autorze
+3. commitowanie 
+    - git status - opis zmian w poczekalni
+    - git add nazwaPliku - dodanie kkonkretnego pliku do poczekalni
+    - git add . - dodanie wszyskich plikow do poczekalni
+    - git commit -m "wiadomosc" - komit z wiadomoscja

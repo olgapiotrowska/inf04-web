@@ -1,1 +1,2 @@
-git init - inicjalizacja porjektu
+1. git init - inicjalizacja projektu
+2. git config --local user.name "" // user.email "" - dodanie donych o autorze

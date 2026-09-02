@@ -1,1 +1,1 @@
-opis projektu blabla
+opis projektu

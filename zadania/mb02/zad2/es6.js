@@ -10,7 +10,7 @@ export const nazwyAktywnych = tablica =>
 
 export const sumaGodzin = tablica =>
   tablica.reduce((suma, kurs) => suma + kurs.godziny, 0);
- 
+
 export const opis = ({ nazwa, godziny }) => `Kurs ${nazwa} trwa ${godziny} godzin`;
 
 export const dodajGodziny = (kurs, ile) => ({ ...kurs, godziny: kurs.godziny + ile });

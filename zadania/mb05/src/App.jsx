@@ -1,8 +1,8 @@
 import './App.css'
 import CategoryBar from './components/CategoryBar'
+import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import Navbar from './components/Navbar'
-
 
 function App() {
 
@@ -47,6 +47,8 @@ function App() {
         <CategoryBar />
         <Gallery />
       </main>
+      
+      <Footer />
     </>
   )
 }

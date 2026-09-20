@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import Navbar from './components/Navbar'
 import AddPhotoModal from './components/AddPhotoModal'
+import FillersOffcanvas from './components/FilltersOffcanvas'
 
 function App() {
 
@@ -37,6 +38,8 @@ function App() {
       <Footer />
 
       <AddPhotoModal />
+
+      <FillersOffcanvas />
     </>
   )
 }

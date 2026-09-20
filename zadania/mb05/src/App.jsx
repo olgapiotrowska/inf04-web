@@ -3,13 +3,13 @@ import CategoryBar from './components/CategoryBar'
 import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import Navbar from './components/Navbar'
+import AddPhotoModal from './components/AddPhotoModal'
 
 function App() {
 
   return (
     <>
       <Navbar />
-      
        <header className="container py-4 py-lg-5">
         <div className="row align-items-center g-3">
           <div className="col-12 col-lg-8">
@@ -22,22 +22,8 @@ function App() {
 
           <div className="col-12 col-lg-4">
             <div className="d-flex flex-wrap gap-2 justify-content-lg-end">
-              <button
-                type="button"
-                className="btn btn-outline-secondary"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#panelFiltrow"
-              >
-                Filtry
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#dodajZdjecie"
-              >
-                Dodaj zdjęcie
-              </button>
+              <button type="button" className="btn btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#panelFiltrow" > Filtry</button>
+              <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dodajZdjecie" > Dodaj zdjęcie</button>
             </div>
           </div>
         </div>
@@ -49,6 +35,8 @@ function App() {
       </main>
       
       <Footer />
+
+      <AddPhotoModal />
     </>
   )
 }

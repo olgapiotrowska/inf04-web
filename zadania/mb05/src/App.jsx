@@ -9,12 +9,18 @@ import FillersOffcanvas from './components/FilltersOffcanvas'
 import photos from './data/photos.json'
 
 function App() {
-    const [zdjecia, setZdjecia] = useState(photos)
+  const [zdjecia, setZdjecia] = useState(photos)
 
+  const [aktywnaKategoria, setAktywnaKategoria] = useState('wszystkie')
+
+  const widoczne =
+    aktywnaKategoria === 'wszystkie'
+      ? zdjecia
+      : zdjecia.filter(z => z.category === aktywnaKategoria)
   return (
     <>
       <Navbar />
-       <header className="container py-4 py-lg-5">
+      <header className="container py-4 py-lg-5">
         <div className="row align-items-center g-3">
           <div className="col-12 col-lg-8">
             <h1 className="mb-2">Galeria zdjęć</h1>
@@ -34,10 +40,14 @@ function App() {
       </header>
 
       <main className="container">
-        <CategoryBar />
-        <Gallery zdjecia={zdjecia}/>
+        <CategoryBar aktywna={aktywnaKategoria} onWybierz={setAktywnaKategoria} />
+        {widoczne.length === 0 && (
+          <div className="alert alert-warning">
+            Nie znaleziono zdjęć w tej kategorii.
+          </div>
+        )}
+        <Gallery zdjecia={widoczne} />
       </main>
-      
       <Footer />
 
       <AddPhotoModal />

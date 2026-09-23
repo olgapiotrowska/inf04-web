@@ -18,9 +18,14 @@ function App() {
       ? zdjecia
       : zdjecia.filter(z => z.category === aktywnaKategoria)
 
-  
+
   function usunZdjecie(id) {
     setZdjecia(zdjecia.filter(z => z.id !== id))
+  }
+
+  function dodajZdjecie(nowe) {
+    const noweId = Math.max(...zdjecia.map(z => z.id)) + 1
+    setZdjecia([...zdjecia, { ...nowe, id: noweId, favorite: false }])
   }
 
   return (
@@ -52,11 +57,11 @@ function App() {
             Nie znaleziono zdjęć w tej kategorii.
           </div>
         )}
-        <Gallery zdjecia={widoczne} onUsun={usunZdjecie}/>
+        <Gallery zdjecia={widoczne} onUsun={usunZdjecie} />
       </main>
       <Footer />
 
-      <AddPhotoModal />
+      <AddPhotoModal onDodaj={dodajZdjecie}/>
 
       <FiltersOffcanvas aktywna={aktywnaKategoria} onWybierz={setAktywnaKategoria} />
     </>

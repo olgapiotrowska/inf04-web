@@ -57,11 +57,22 @@ function App() {
             Nie znaleziono zdjęć w tej kategorii.
           </div>
         )}
+        <p className="text-body-secondary">
+          Wyświetlono {widoczne.length} z {zdjecia.length} zdjęć
+        </p>
+
+        {widoczne.length === 0 && (
+          <div className="alert alert-warning">
+            Nie znaleziono zdjęć w tej kategorii.
+          </div>
+        )}
+
+
         <Gallery zdjecia={widoczne} onUsun={usunZdjecie} />
       </main>
       <Footer />
 
-      <AddPhotoModal onDodaj={dodajZdjecie}/>
+      <AddPhotoModal onDodaj={dodajZdjecie} />
 
       <FiltersOffcanvas aktywna={aktywnaKategoria} onWybierz={setAktywnaKategoria} />
     </>

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import CategoryBar from './components/CategoryBar'
 import Footer from './components/Footer'
@@ -5,8 +6,10 @@ import Gallery from './components/Gallery'
 import Navbar from './components/Navbar'
 import AddPhotoModal from './components/AddPhotoModal'
 import FillersOffcanvas from './components/FilltersOffcanvas'
+import photos from './data/photos.json'
 
 function App() {
+    const [zdjecia, setZdjecia] = useState(photos)
 
   return (
     <>
@@ -32,7 +35,7 @@ function App() {
 
       <main className="container">
         <CategoryBar />
-        <Gallery />
+        <Gallery zdjecia={zdjecia}/>
       </main>
       
       <Footer />

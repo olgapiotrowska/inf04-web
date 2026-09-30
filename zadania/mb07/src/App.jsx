@@ -12,6 +12,7 @@ function App() {
   const numerKursuRef = useRef(null)
   const [szukaj, setSzukaj] = useState('')
   const [rosnaco, setRosnaco] = useState(true)
+  const [status, setStatus] = useState(null)
 
   const widoczne = kursy
     .map((kurs, index) => ({ kurs, numer: index + 1 }))
@@ -30,8 +31,10 @@ function App() {
 
     if (kurs !== undefined) {
       console.log(kurs)
+      setStatus({ typ: 'sukces', tresc: `${imienazwisko} zapisany(-a) na kurs: ${kurs}` })
     } else {
       console.log('Nieprawidłowy numer kursu')
+      setStatus({ typ: 'blad', tresc: 'Nieprawidłowy numer kursu' })
     }
   }
 
@@ -51,6 +54,13 @@ function App() {
           <li key={numer} value={numer}>{kurs}</li>
         ))}
       </ol>
+
+      {
+        status && (
+          <div className={`alert alert-${status.typ === 'sukces' ? 'success' : 'danger'}`}>
+            {status.tresc}
+          </div >)
+      }
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">

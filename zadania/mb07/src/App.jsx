@@ -45,6 +45,7 @@ function App() {
         {rosnaco ? 'Z-A' : 'A-Z'}
       </button>
 
+      <p className="text-border-secondary">Znaleziono {widoczne.length} z {kursy.length} kursów</p>
       <ol>
         {widoczne.map(({ kurs, numer }) => (
           <li key={numer} value={numer}>{kurs}</li>

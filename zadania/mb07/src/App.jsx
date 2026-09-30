@@ -11,10 +11,13 @@ function App() {
   const imieNazwiskoRef = useRef(null)
   const numerKursuRef = useRef(null)
   const [szukaj, setSzukaj] = useState('')
+  const [rosnaco, setRosnaco] = useState(true)
 
   const widoczne = kursy
     .map((kurs, index) => ({ kurs, numer: index + 1 }))
     .filter(({ kurs }) => kurs.toLowerCase().includes(szukaj.toLowerCase()))
+    .sort((a, b) => rosnaco ? a.kurs.localeCompare(b.kurs) : b.kurs.localeCompare(a.kurs))
+
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -38,6 +41,9 @@ function App() {
       <h2 className="h5">Liczba kursow: {kursy.length}</h2>
 
       <input type="text" className="form-control mb-2" placeholder="Szukaj kursu ... " value={szukaj} onChange={e => setSzukaj(e.target.value)} />
+      <button type="button" className="btn btn-outline-secondary text-nowrap" onClick={() => setRosnaco(!rosnaco)}>
+        {rosnaco ? 'Z-A' : 'A-Z'}
+      </button>
 
       <ol>
         {widoczne.map(({ kurs, numer }) => (
